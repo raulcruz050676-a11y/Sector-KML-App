@@ -1,0 +1,11 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "antenna-hero",
+      "description": "Telecommunication tower against a clear sky",
+      "imageUrl": "https://picsum.photos/seed/antenna1/1200/400",
+      "imageHint": "telecommunication tower"
+    }
+  ]
+}
