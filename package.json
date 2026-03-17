@@ -1,12 +1,12 @@
 {
   "name": "sector-kml",
   "version": "1.0.0",
+  "description": "App para generar KML",
+  "main": "index.js",
   "scripts": {
-    "build": "next build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
