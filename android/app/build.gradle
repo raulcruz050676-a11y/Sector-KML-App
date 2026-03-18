@@ -4,7 +4,9 @@ plugins {
 }
 
 android {
+    // ESTA ES LA LÍNEA QUE FALTA Y QUE MARCÓ EL ERROR:
     namespace "com.tuapp.kmlcraft"
+    
     compileSdk 34
 
     defaultConfig {
