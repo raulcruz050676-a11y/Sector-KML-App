@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
+    // Identificador único de tu app
     namespace 'com.tuapp.kmlcraft'
     compileSdk 33
 
@@ -11,20 +12,24 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // Aquí es donde activamos Java 11 para que no haya errores
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 
     buildTypes {
         release {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
@@ -38,6 +43,8 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
-    // Cambié esta línea para que sea más compatible:
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    
+    // Librería estándar de Kotlin compatible con Java 11
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.0"
 }
