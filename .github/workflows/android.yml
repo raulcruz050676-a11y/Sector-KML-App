@@ -20,18 +20,18 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew || chmod +x android/gradlew
+    - name: Grant execute permission
+      run: find . -name "gradlew" -exec chmod +x {} +
 
     - name: Build APK
       run: |
-        if [ -f "gradlew" ]; then
-          ./gradlew assembleRelease
-        elif [ -d "android" ]; then
-          cd android && ./gradlew assembleRelease
-        else
-          echo "No se encontró gradlew" && exit 1
+        GRADLEW_PATH=$(find . -name "gradlew" | head -n 1)
+        if [ -z "$GRADLEW_PATH" ]; then
+          echo "Error: No se encontró el archivo gradlew en ninguna carpeta."
+          exit 1
         fi
+        cd $(dirname "$GRADLEW_PATH")
+        ./gradlew assembleRelease
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
