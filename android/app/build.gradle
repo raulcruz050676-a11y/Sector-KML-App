@@ -4,9 +4,7 @@ plugins {
 }
 
 android {
-    // ESTA ES LA LÍNEA QUE FALTA Y QUE MARCÓ EL ERROR:
     namespace "com.tuapp.kmlcraft"
-    
     compileSdk 34
 
     defaultConfig {
@@ -27,6 +25,8 @@ android {
 }
 
 dependencies {
+    // ESTAS SON LAS HERRAMIENTAS QUE EL ROBOT NO ENCONTRABA:
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
 }
