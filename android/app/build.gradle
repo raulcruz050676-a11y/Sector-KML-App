@@ -1,7 +1,8 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android' version '1.8.0'
+    id 'kotlin-android'
 }
+// ... el resto dejalo como estaba
 
 android {
     compileSdk 33
