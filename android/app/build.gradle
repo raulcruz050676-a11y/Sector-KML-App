@@ -1,8 +1,5 @@
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-}
-// ... el resto dejalo como estaba
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 33
