@@ -21,17 +21,13 @@ jobs:
         cache: gradle
 
     - name: Grant execute permission for gradlew
-      run: |
-        chmod +x android/gradlew
-        chmod +x android/app/gradlew || true
+      run: chmod +x gradlew
 
     - name: Build with Gradle
-      run: |
-        cd android
-        ./gradlew assembleRelease
+      run: ./gradlew assembleRelease
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
         name: KML-Craft-APK
-        path: android/app/build/outputs/apk/release/app-release-unsigned.apk
+        path: app/build/outputs/apk/release/app-release-unsigned.apk
