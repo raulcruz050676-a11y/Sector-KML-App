@@ -20,15 +20,15 @@ jobs:
         distribution: 'temurin'
 
     - name: Grant execute permission for gradlew
-      run: chmod +x Sector-KML-App/android/gradlew
+      run: chmod +x android/gradlew
 
     - name: Build with Gradle
       run: ./gradlew clean assembleDebug --no-build-cache
-      working-directory: Sector-KML-App/android
+      working-directory: android
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
-        path: "**/build/outputs/apk/debug/*.apk"
+        path: android/app/build/outputs/apk/debug/*.apk
         if-no-files-found: error
