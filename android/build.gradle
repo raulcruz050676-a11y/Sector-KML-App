@@ -1,10 +1,11 @@
 buildscript {
     repositories {
-        google()            // Fundamental para encontrar 'com.android.application'
+        google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.0' // O la versión que uses
+        // Asegúrate de que esta versión sea compatible con tu código
+        classpath 'com.android.tools.build:gradle:8.2.0'
     }
 }
 
@@ -13,4 +14,8 @@ allprojects {
         google()
         mavenCentral()
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
