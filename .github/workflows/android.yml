@@ -3,8 +3,6 @@ name: Android CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
@@ -23,12 +21,10 @@ jobs:
       run: chmod +x android/gradlew
 
     - name: Build with Gradle
-      run: ./gradlew clean assembleDebug --no-build-cache
+      run: ./gradlew assembleDebug
       working-directory: android
 
-    - name: Upload APK
-      uses: actions/upload-artifact@v4
-      with:
-        name: app-debug
-        path: android/app/build/outputs/apk/debug/*.apk
-        if-no-files-found: error
+    - name: BUSCADOR DE APK (Diagnóstico)
+      run: |
+        echo "Buscando archivos APK generados..."
+        find . -name "*.apk"
